@@ -34,6 +34,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/v-mask',
+    '~/plugins/validator'
   ],
 
   /*
@@ -43,7 +45,12 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    [
+      'nuxt-validate', {
+        fieldsBagName: 'veeFields'
+      }
+    ]
   ],
   /*
   ** Axios module configuration
